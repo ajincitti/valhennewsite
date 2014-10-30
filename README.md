@@ -22,8 +22,3 @@ Then, launch the server:
 middleman server
 ```
 
-## Authors
-
- - Tony Incitti (@ajincitti)
- - Matt Harris (@sonic331va)
- - Kevin Primm (@kfprimm)
