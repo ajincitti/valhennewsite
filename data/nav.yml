@@ -1,0 +1,29 @@
+links:
+  index:
+    href: /
+    text: Home
+  about:
+    href: /about
+    text: About
+  encuentro:
+    href: /encuentro
+    text: Encuentro
+  gallery:
+    href: /gallery
+    text: Gallery
+  hci:
+    href: /hci
+    text: HCI
+  lecture-series:
+    href: /lecture-series
+    text: Lecture Series
+  membership:
+    href: /membership
+    text: Membership
+  resources:
+    href: /resources
+    text: Resources  
+  scholarships:
+    href: /scholarships
+    text: Scholarships    
+

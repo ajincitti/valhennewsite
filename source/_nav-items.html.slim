@@ -1,0 +1,5 @@
+- data.nav.links.each do |id, attrs|
+  li class="#{'active' if page_classes.split(' ').include?(id)}"
+    a href="#{attrs.href}" #{attrs.text}
+li.show-for-small
+  a href='https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=N5SK56LG6T2FJ' Donate

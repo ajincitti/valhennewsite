@@ -1,0 +1,130 @@
+@import 'normalize';
+@import 'foundation.override';
+@import 'foundation';
+
+.sliderfix {
+  margin-right: 20px;
+}
+
+p, blockquote, li, h1, h2, h3, a {
+  text-shadow: 1px 1px 0px #fff;
+  filter: dropshadow(color=#fff, offx=1, offy=1);
+  
+  * {
+    text-shadow: none;
+  }
+}
+
+.no-shadow {
+  text-shadow: none;
+  filter: none;
+}
+
+img.scaling {
+  max-width:  100%;
+  max-height: 100%;
+}
+
+header {
+  background: $info-color; /* Old browsers */
+  background: -moz-linear-gradient(top, $info-color 0%, #fefcea 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$info-color), color-stop(100%,#fefcea)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, $info-color 0%,#fefcea 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, $info-color 0%,#fefcea 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, $info-color 0%,#fefcea 100%); /* IE10+ */
+  background: linear-gradient(to bottom, $info-color 0%,#fefcea 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$info-color', endColorstr='#fefcea',GradientType=0 ); /* IE6-9 */
+}
+
+.donate {
+  margin-top: 86px;
+}
+
+header > .row-fluid {
+  background: $topbar-bg-color;
+}
+
+header > .row img {
+  padding: 0px 0;
+}
+
+.scholarship dt {
+  text-transform: uppercase;
+  color: #b9b9b9;
+}
+
+@media #{$medium-up} {
+  .scholarship dt {
+    float: left;
+    text-align: right;
+    clear: left;
+    width: 100px;
+  }
+
+  .scholarship dd {
+    margin: 0 0 0 110px;
+    padding: 0 0 0.5em 0;
+  }
+}
+
+.gallery {
+  margin-left: 15px;
+}
+
+.gallery li {
+  margin: 5px 5px;
+}
+
+nav.top-bar {
+  margin-bottom: 0;
+}
+
+#scholarship-tabs a {
+  padding: 0.1875rem 1rem;
+}
+
+.tab-bar .title {
+  color: #fff;
+  text-shadow: 3px 3px 4px #000;
+  background: url(/images/logo_1.png) center no-repeat;
+  background-size: contain;
+}
+
+#page {
+  padding: 0 5px;
+}
+
+#bottom-info {
+  padding: 5px 0;
+}
+
+#footer {
+  padding: 5px 0;
+  background: $topbar-bg-color;
+  color: #fff;
+  
+  a {
+    color: #fff;
+    text-shadow: none;    
+  }
+}
+
+@mixin alert-green {
+  border-style: $alert-border-style;
+  border-width: $alert-border-width;
+  display: block;
+  font-weight: $alert-font-weight;
+  margin-bottom: $alert-bottom-margin;
+  position: relative;
+  padding: $alert-padding-top $alert-padding-opposite-direction $alert-padding-bottom $alert-padding-default-float;
+  font-size: $alert-font-size;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.alertgreen {
+  @include alert-green;
+  @include alert(#c8e587);
+}

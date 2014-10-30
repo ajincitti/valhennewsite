@@ -1,0 +1,53 @@
+doctype html
+/[if IE 9] html class="lt-ie10" lang="en"
+html.no-js lang="en"
+  head
+    meta charset="utf-8"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"
+    
+    title= current_page.data.title ? "#{current_page.data.title} - VALHEN" : "VALHEN"
+    
+    = stylesheet_link_tag "site", query: { body: 1 }
+    = javascript_include_tag "custom.modernizr"
+  
+  body
+    .off-canvas-wrap
+      .inner-wrap
+        aside.left-off-canvas-menu.hide-for-large
+          ul.off-canvas-list
+            li 
+              label VALHEN
+            = partial 'nav-items'
+        header.row-fluid
+          .row.hide-for-small
+            .right
+			  <form class='donate' action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"><input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="hosted_button_id" value="N5SK56LG6T2FJ"><input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"><img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"></form>
+            .left
+              = link_to image_tag('logo_0.png'), '/'
+          .row-fluid
+            .row
+              .contain-to-grid.sticky
+                nav.top-bar.hide-for-small data-topbar=''
+                  ul.title-area
+                  section.top-bar-section
+                    ul.left
+                      = partial 'nav-items'
+              nav.tab-bar.show-for-small
+                section.left-small
+                  a.left-off-canvas-toggle.menu-icon
+                    span
+
+                section.middle.tab-bar-section
+                  h1.title #{current_page.data.title}
+
+    
+        #page.row
+          = yield
+          .right #{link_to image_tag('facebook-icon.png') , 'http://www.facebook.com/VALHENetwork', class: 'no-shadow'} #{link_to image_tag('twitter-icon.png'), 'https://www.twitter.com/VALHENetwork', class: 'no-shadow'}     
+  
+    #footer.row-fluid.hide-for-small
+      .row.text-center
+        small #{link_to '&copy; 2013 VALHEN' , '/about', class: 'no-shadow'}
+
+    = javascript_include_tag "site"

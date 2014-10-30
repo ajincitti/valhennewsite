@@ -1,0 +1,53 @@
+---
+title: Gallery
+galleries:
+  - name: HCI 2014
+    dir: 2014-hci
+    description: Photos from HCI 2014. 
+  - name: HCI 2013 - NASA
+    dir: 2013-hci-nasa
+    description: Pictures taken at HCI 2013, held at Virginia State University. The guest speaker was astronaut Dr. Serena Auñón.
+
+  - name: HCI 2013 - Closing
+    dir: 2013-hci-closing
+    description: Pictures from the closing Ceremonies of HCI 2013.
+    
+  - name: HCI 2012
+    dir: 2012-hci
+    description: Pictures from HCI 2012.
+    
+  - name: Encuentro 2013
+    dir: 2013-encuentro
+    description: Photos from our Encuentro 2013 Conference.
+    
+  - name: Encuentro 2012
+    dir: 2012-encuentro
+    description: Photos from our Encuentro 2012 Conference.
+  
+
+---
+
+p.hide-for-medium
+h1.hide-for-small Gallery
+
+dl.tabs.hide-for-small data-tab=''
+  - current_page.data.galleries.each_with_index do |gallery, i|
+    dd class="#{'active' if i == 0}"
+      = link_to gallery.name, "#g-#{i}"
+
+select.show-for-small data-tab-proxy='dl.tabs'
+  - current_page.data.galleries.each_with_index do |gallery, i|
+    option value="#g-#{i}" #{gallery.name}
+
+.tabs-content  
+  - current_page.data.galleries.each_with_index do |gallery, i|
+    - dir = gallery.dir
+    div class="content #{'active' if i == 0}" id="g-#{i}"
+      p= gallery.description
+      .panel
+        ul.clearing-thumbs.inline-list.gallery data-clearing=''
+          - Dir.foreach(File.join(Middleman::Application.root, "source/images/galleries/#{dir}")).each do |pic|
+            - next if pic == '.' || pic == '..'
+            li
+              = link_to image_tag("images/galleries/#{dir}-th/#{pic}"), "images/galleries/#{dir}/#{pic}", class: 'th'
+      
